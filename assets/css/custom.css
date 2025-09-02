@@ -1,0 +1,19 @@
+/* Custom styles for logo height control */
+.logo-fixed-height {
+    max-height: 40px !important;
+    width: auto !important;
+    object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo-fixed-height {
+        max-height: 35px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-fixed-height {
+        max-height: 30px !important;
+    }
+} 
