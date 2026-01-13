@@ -1,37 +1,5 @@
 <!-- Shared Footer Component -->
 <!-- Footer -->
-<style>
-   .widgetContainer {
-      width: 300px !important;
-      height: auto !important;
-      max-width: 300px !important;
-      margin: 0 auto !important;
-      position: relative !important;
-      overflow: hidden !important;
-      display: block !important;
-   }
-   .widgetContainer *,
-   .widgetContainer iframe,
-   .widgetContainer canvas,
-   .widgetContainer div,
-   #mapmyvisitors,
-   #mapmyvisitors + *,
-   [id*="map"],
-   [id*="Map"] {
-      max-width: 300px !important;
-      width: 300px !important;
-      height: auto !important;
-      position: relative !important;
-   }
-   /* 防止地图元素使用固定定位 */
-   body > div[id*="map"],
-   body > iframe[src*="mapmyvisitors"],
-   body > canvas[id*="map"] {
-      position: relative !important;
-      max-width: 300px !important;
-      width: 300px !important;
-   }
-</style>
 <footer class="pt-7">
    <div class="container">
       <!-- Footer 3 column -->
@@ -101,12 +69,7 @@
       </div>
       
       <div class="mt-lg-7 mt-5 border-top py-lg-7 py-5">
-         <div class="row">
-            <div class="widgetContainer" style="width:300px; margin: 0 auto; overflow: hidden !important; position: relative !important;">
-               <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=BNGqFy-BfhJgL2qK3vunPOqDxSMULa7GS9ol7FQzKC4&cl=ffffff&w=a"></script>
-            </div>
-         </div>
-         <div class="row align-items-center gy-2 gy-lg-0 mt-4">
+         <div class="row align-items-center gy-2 gy-lg-0">
             <div class="col-xl-7 col-lg-4 col-12">
                <div class="small">
                   © 2025 Workshop on Agentic AI for Visual Media. All rights reserved.<br>
