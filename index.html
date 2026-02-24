@@ -55,6 +55,47 @@
            max-width: 100%;
            object-fit: contain;
        }
+
+       /* Organizers: same card size, 5+5+3 rows, centered */
+       @media (min-width: 1200px) {
+           #organizers .organizers-row-5 .col {
+               flex: 0 0 calc(100% / 5);
+               max-width: calc(100% / 5);
+           }
+           #organizers .organizers-row-3 .col {
+               flex: 0 0 calc(100% / 5);
+               max-width: calc(100% / 5);
+           }
+           #organizers .card-lift {
+               height: 100%;
+               min-height: 280px;
+           }
+           #organizers .card-lift .card-body {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               height: 100%;
+           }
+           #organizers .card-lift .card-body .mb-4 { flex-shrink: 0; }
+           #organizers .card-lift .card-body .mb-3 { flex-shrink: 0; }
+           #organizers .card-lift .card-body > img:last-of-type { margin-top: auto; }
+       }
+
+       /* Keynote speakers: 5 in one row on large screens; same avatar size for all */
+       @media (min-width: 992px) {
+           #speakers .row.gy-5 .col-lg-3 { flex: 0 0 20%; max-width: 20%; }
+       }
+       #speakers .zoom-img {
+           aspect-ratio: 1;
+           overflow: hidden;
+           margin: 0;
+       }
+       #speakers .zoom-img img {
+           width: 100%;
+           height: 100%;
+           object-fit: contain;
+           object-position: center;
+       }
    </style>
 
    <title>Workshop on Agentic AI for Visual Media</title>
@@ -237,6 +278,15 @@
                      <span class="fs-6">University of Washington</span>
                   </div>
                </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <figure class="mb-4 zoom-img">
+                     <img src="./assets/images/team/tencent_hunyuan.png" alt="Tencent Hunyuan Team" class="rounded-3 img-fluid" />
+                  </figure>
+                  <div class="mb-4">
+                     <h4 class="mb-1">Tencent Hunyuan Team</h4>
+                     <span class="fs-6">Tencent</span>
+                  </div>
+               </div>
             </div>
          </div>
       </section>
@@ -310,7 +360,7 @@
                </div>
             </div>
             <div class="table-responsive-xl">
-               <div class="row row-cols-xl-6 row-cols-md-3 row-cols-1 g-4 flex-nowrap pb-4 pb-xl-0 me-5 me-lg-0"
+               <div class="row justify-content-center g-4 pb-4 pb-xl-0 organizers-row-5 row-cols-md-3 row-cols-1"
                   data-cues="fadeIn">
 
 
@@ -432,28 +482,6 @@
                      </a>
                   </div>
 
-                  <div class="col" data-cue="fadeIn">
-                     <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <div class="card text-center shadow-sm border-0 card-lift">
-                           <div class="card-body">
-                              <div class="mb-4">
-                                 <!-- Add link to the image -->
-                                 <a href="https://amandajshao.github.io/" target="_blank">
-                                    <img src="./assets/images/team/jingshao.jpeg" alt="testimonial"
-                                       class="rounded-circle avatar avatar-xxl" />
-                                 </a>
-                              </div>
-                              <div class="mb-3" style="min-height: 3em;">
-                                 <h4 class="mb-0 h5">Dr. Jing Shao</h4>
-                                 <span class="small"></span>
-                              </div>
-                              <!-- Fixed height logo with auto width -->
-                              <img src="./assets/images/brand-logo/shanghai_ai_lab.png" alt="img" style="height: 40px; width: auto; max-width: 100%;" />
-                           </div>
-                        </div>
-                     </a>
-                  </div>
-
                   
                </div>
                
@@ -463,8 +491,48 @@
             <div class="mb-5"></div>
 
             <div class="table-responsive-xl">
-               <div class="row row-cols-xl-6 row-cols-md-3 row-cols-1 g-4 flex-nowrap pb-4 pb-xl-0 me-5 me-lg-0"
+               <div class="row justify-content-center g-4 pb-4 pb-xl-0 organizers-row-5 row-cols-md-3 row-cols-1"
                   data-cues="fadeIn">
+
+                  <div class="col" data-cue="fadeIn">
+                     <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="card text-center shadow-sm border-0 card-lift">
+                           <div class="card-body">
+                              <div class="mb-4">
+                                 <a href="#" target="_blank">
+                                    <img src="./assets/images/team/Yeying_Jin.png" alt="testimonial"
+                                       class="rounded-circle avatar avatar-xxl" />
+                                 </a>
+                              </div>
+                              <div class="mb-3" style="min-height: 3em;">
+                                 <h4 class="mb-0 h5">Dr. Yeying Jin</h4>
+                                 <span class="small"></span>
+                              </div>
+                              <img src="./assets/images/brand-logo/tencent.jpg" alt="img" style="height: 40px; width: auto; max-width: 100%; object-fit: contain;" />
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+
+                  <div class="col" data-cue="fadeIn">
+                     <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="card text-center shadow-sm border-0 card-lift">
+                           <div class="card-body">
+                              <div class="mb-4">
+                                 <a href="https://amandajshao.github.io/" target="_blank">
+                                    <img src="./assets/images/team/jingshao.jpeg" alt="testimonial"
+                                       class="rounded-circle avatar avatar-xxl" />
+                                 </a>
+                              </div>
+                              <div class="mb-3" style="min-height: 3em;">
+                                 <h4 class="mb-0 h5">Dr. Jing Shao</h4>
+                                 <span class="small"></span>
+                              </div>
+                              <img src="./assets/images/brand-logo/shanghai_ai_lab.png" alt="img" style="height: 40px; width: auto; max-width: 100%;" />
+                           </div>
+                        </div>
+                     </a>
+                  </div>
 
                   <div class="col" data-cue="fadeIn">
                      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -491,7 +559,6 @@
                         <div class="card text-center shadow-sm border-0 card-lift">
                            <div class="card-body">
                               <div class="mb-4">
-                                 <!-- Add link to the image -->
                                  <a href="https://sites.google.com/site/hezhangsprinter/" target="_blank">
                                     <img src="./assets/images/team/696134e4ed13b6e3fde78042.jpg" alt="testimonial"
                                        class="rounded-circle avatar avatar-xxl" />
@@ -501,7 +568,6 @@
                                  <h4 class="mb-0 h5">Dr. He Zhang</h4>
                                  <span class="small"></span>
                               </div>
-                              <!-- Fixed height logo with auto width -->
                               <img src="./assets/images/brand-logo/Adobe-Logo-2020-present.png" alt="img" style="height: 40px; width: auto; max-width: 100%;" />
                            </div>
                         </div>
@@ -513,7 +579,6 @@
                         <div class="card text-center shadow-sm border-0 card-lift">
                            <div class="card-body">
                               <div class="mb-4">
-                                 <!-- Add link to the image -->
                                  <a href="https://jianwang-cmu.github.io/" target="_blank">
                                     <img src="./assets/images/team/Jian_squareformat.jpg" alt="testimonial"
                                        class="rounded-circle avatar avatar-xxl" />
@@ -523,13 +588,22 @@
                                  <h4 class="mb-0 h5">Dr. Jian Wang</h4>
                                  <span class="small"></span>
                               </div>
-
-                              <!-- Fixed height logo with auto width -->
                               <img src="./assets/images/brand-logo/Snap_Inc.png" alt="img" style="height: 40px; width: auto; max-width: 100%;" />
                            </div>
                         </div>
                      </a>
                   </div>
+
+                  
+               </div>
+               
+            </div>
+
+            <div class="mb-5"></div>
+
+            <div class="table-responsive-xl">
+               <div class="row justify-content-center g-4 pb-4 pb-xl-0 organizers-row-3 row-cols-md-3 row-cols-1"
+                  data-cues="fadeIn">
 
                   <div class="col" data-cue="fadeIn">
                      <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -617,7 +691,7 @@
             </div>
             <div class="row">
                <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
-                  <div class="row row-cols-lg-3 row-cols-md-3 row-cols-1 justify-content-center g-5">
+                  <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 justify-content-center g-5">
                      <div class="col">
                         <figure class="text-center mb-0">
                            <img src="./assets/images/brand-logo/Snap_Inc.png" alt="logo" class="img-fluid"
@@ -628,6 +702,12 @@
                         <figure class="text-center mb-0">
                            <img src="./assets/images/brand-logo/Adobe-Logo-2020-present.png" alt="logo" class="img-fluid"
                               style="max-width: 200px; height: 100px;" />
+                        </figure>
+                     </div>
+                     <div class="col">
+                        <figure class="text-center mb-0">
+                           <img src="./assets/images/brand-logo/tencent.jpg" alt="Tencent logo" class="img-fluid"
+                              style="max-width: 200px; height: 100px; object-fit: contain;" />
                         </figure>
                      </div>
                      <div class="col">
