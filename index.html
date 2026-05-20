@@ -81,10 +81,6 @@
            #organizers .card-lift .card-body > img:last-of-type { margin-top: auto; }
        }
 
-       /* Keynote speakers: 5 in one row on large screens; same avatar size for all */
-       @media (min-width: 992px) {
-           #speakers .row.gy-5 .col-lg-3 { flex: 0 0 20%; max-width: 20%; }
-       }
        #speakers .zoom-img {
            aspect-ratio: 1;
            overflow: hidden;
@@ -95,6 +91,33 @@
            height: 100%;
            object-fit: contain;
            object-position: center;
+       }
+
+       /* Workshop schedule (conference-style layout) */
+       #schedule .schedule-period-title {
+           font-size: 1.35rem;
+           font-weight: 600;
+       }
+       #schedule .schedule-item-time {
+           font-size: 0.9375rem;
+           font-weight: 600;
+           letter-spacing: 0.01em;
+       }
+       #schedule .schedule-item-title {
+           font-size: 1.25rem;
+       }
+       #schedule .schedule-item-desc {
+           font-size: 1rem;
+           color: var(--bs-secondary-color);
+       }
+       #schedule .avatar {
+           object-fit: cover;
+       }
+
+       /* About timeline badges: consistent width for dates */
+       .timeline-badge {
+           min-width: 5.75rem;
+           flex-shrink: 0;
        }
    </style>
 
@@ -195,51 +218,51 @@
                </div>
 
                <div class="col-md-5 col-12">
-                  <h3 class="my-3">Latest News</h3>
+                  <h3 class="my-3">Timeline</h3>
                   <div class="mb-4">
                      <div class="d-flex align-items-start mb-3">
-                        <span class="badge bg-primary-subtle text-primary fw-normal me-3">2026-01</span>
+                        <span class="badge bg-warning-subtle text-warning-emphasis fw-normal me-3 timeline-badge">2026-06-03</span>
                         <div>
-                           <p class="mb-0"><span class="fw-bold">Workshop Website Launched.</span> Official website for the
-                              Workshop on Agentic AI for Visual Media is now live. Stay tuned for updates and important
-                              dates.</p>
+                           <p class="mb-0"><span class="fw-bold">Workshop Date.</span> 3–7 June 2026, in conjunction with CVPR 2026 in Denver, Colorado.</p>
                         </div>
                      </div>
                      <div class="d-flex align-items-start mb-3">
-                        <span class="badge bg-primary-subtle text-primary fw-normal me-3">2026-02</span>
+                        <span class="badge bg-primary-subtle text-primary fw-normal me-3 timeline-badge">2026-05</span>
                         <div>
-                           <p class="mb-0">Our workshop received generous sponsorship from Snap Inc.</p>
+                           <p class="mb-0"><span class="fw-bold">Keynote Lineup Updated.</span> Six keynote speakers confirmed. See <a href="#schedule">workshop schedule</a>.</p>
                         </div>
                      </div>
                      <div class="d-flex align-items-start mb-3">
-                        <span class="badge bg-primary-subtle text-primary fw-normal me-3">2026-02</span>
+                        <span class="badge bg-warning-subtle text-warning-emphasis fw-normal me-3 timeline-badge">2026-03-31</span>
                         <div>
-                           <p class="mb-0">Our workshop received generous sponsorship from Adobe.</p>
+                           <p class="mb-0"><span class="fw-bold">Notification of Acceptance.</span> Authors will be notified of paper decisions.</p>
                         </div>
                      </div>
                      <div class="d-flex align-items-start mb-3">
-                        <span class="badge bg-primary-subtle text-primary fw-normal me-3">2026-03</span>
+                        <span class="badge bg-warning-subtle text-warning-emphasis fw-normal me-3 timeline-badge">2026-03-20</span>
                         <div>
-                           <p class="mb-0">Our workshop received generous sponsorship from Tencent.</p>
+                           <p class="mb-0"><span class="fw-bold">Paper Submission Deadline.</span> Last day to submit long papers and extended abstracts.</p>
+                        </div>
+                     </div>
+                     <div class="d-flex align-items-start mb-3">
+                        <span class="badge bg-primary-subtle text-primary fw-normal me-3 timeline-badge">2026-03</span>
+                        <div>
+                           <p class="mb-0"><span class="fw-bold">Call for Papers Open.</span> Submissions are open on <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/AAVM" target="_blank" rel="noopener noreferrer">OpenReview</a>. See <a href="./call-for-paper.html">submission guidelines</a>.</p>
+                        </div>
+                     </div>
+                     <div class="d-flex align-items-start mb-3">
+                        <span class="badge bg-primary-subtle text-primary fw-normal me-3 timeline-badge">2026-03</span>
+                        <div>
+                           <p class="mb-0"><span class="fw-bold">Sponsorship.</span> Our workshop received generous sponsorship from Snap Inc., Adobe, and Tencent.</p>
+                        </div>
+                     </div>
+                     <div class="d-flex align-items-start mb-3">
+                        <span class="badge bg-primary-subtle text-primary fw-normal me-3 timeline-badge">2026-01</span>
+                        <div>
+                           <p class="mb-0"><span class="fw-bold">Workshop Website Launched.</span> Official website for the Workshop on Agentic AI for Visual Media is now live.</p>
                         </div>
                      </div>
                   </div>
-                  <!-- <div class="mb-4">
-                     <div class="d-flex align-items-start mb-3">
-                        <span class="badge bg-primary-subtle text-primary fw-normal me-3">2024-05-08</span>
-                        <div>
-                           <p class="mb-0"><span class="fw-bold">Call for Papers Open.</span> We are now accepting submissions for the workshop. Please check the submission guidelines and important dates.</p>
-                        </div>
-                     </div>
-                  </div> -->
-                  <!-- <div class="mb-4">
-                     <div class="d-flex align-items-start mb-3">
-                        <span class="badge bg-primary-subtle text-primary fw-normal me-3">2024-05-05</span>
-                        <div>
-                           <p class="mb-0"><span class="fw-bold">Keynote Speakers Announced.</span> We are excited to announce our distinguished keynote speakers for the workshop.</p>
-                        </div>
-                     </div>
-                  </div> -->
                </div>
             </div>
          </div>
@@ -296,6 +319,8 @@
                      <span class="fs-6">University of Washington</span>
                   </div>
                </div>
+            </div>
+            <div class="row gy-5 justify-content-center">
                <div class="col-lg-3 col-md-6 col-12">
                   <figure class="mb-4 zoom-img">
                      <img src="./assets/images/team/tencent_hunyuan.png" alt="Tencent Hunyuan Team" class="rounded-3 img-fluid" />
@@ -305,66 +330,228 @@
                      <span class="fs-6">Tencent</span>
                   </div>
                </div>
+               <div class="col-lg-3 col-md-6 col-12">
+                  <figure class="mb-4 zoom-img">
+                     <img src="./assets/images/team/tom-cao.jpg" alt="Tom Cao" class="rounded-3 img-fluid" />
+                  </figure>
+                  <div class="mb-4">
+                     <h4 class="mb-1">Tom Cao</h4>
+                     <span class="fs-6">Co-founder &amp; CTO, Phyllo Labs</span>
+                  </div>
+               </div>
             </div>
          </div>
       </section>
       <!--Speakers end-->
 
-
-
-      <!--Call for Paper start-->
-      <section id="call-for-paper" class="my-xl-9 my-5">
+      <!--Event schedule start-->
+      <section id="schedule" class="my-xl-9 my-5" data-cue="fadeIn">
          <div class="container">
             <div class="row">
-               <div class="col-lg-6 offset-lg-3">
-                  <div class="text-center mb-xl-7 mb-5">
-                     <h2 class="my-3">Call for Paper</h2>
-                     <p class="mb-0">We are now accepting submissions for the Workshop on Agentic AI for Visual Media. Please check the submission guidelines and important dates.</p>
+               <div class="col-md-6">
+                  <div class="mb-5 pb-2">
+                     <h2 class="mb-2">Workshop Schedule</h2>
+                     <p class="mb-0">Full-day program at CVPR 2026 with six keynote talks and afternoon sessions.</p>
                   </div>
                </div>
             </div>
             <div class="row">
-               <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
-                  <div class="text-center mb-5">
-                     <a href="./call-for-paper.html" class="btn btn-primary btn-lg">View Call for Paper</a>
+               <div class="col-md-12" data-cue="fadeIn">
+                  <div class="row g-0">
+                     <div class="col-lg-12">
+                        <h4 class="mb-5 pt-2">Workshop Day — Agentic AI for Visual Media</h4>
+                     </div>
                   </div>
-                  <!-- QR Codes temporarily commented out
-                  <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 justify-content-center g-5 mt-5">
-                     <div class="col">
-                        <div class="card border-0 shadow-sm text-center h-100">
-                           <div class="card-body p-5">
-                              <h5 class="mb-4">Submission Site</h5>
-                              <div class="mb-3">
-                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://agentic-visual-media.github.io/call-for-paper.html" 
-                                      alt="Submission Site QR Code" 
-                                      class="img-fluid"
-                                      style="max-width: 200px;" />
-                              </div>
-                              <p class="mb-0 text-muted small">Scan to access the submission guidelines and submit your paper</p>
+
+
+                  <!-- Morning -->
+                  <div class="row g-0">
+                     <div class="col-lg-12">
+                        <h4 class="schedule-period-title mb-5 pt-2">Morning</h4>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">8:50 AM - 9:00 AM</h6>
+                        <h4 class="schedule-item-title">Opening</h4>
+                        <p class="schedule-item-desc mb-0">Welcome remarks and overview of the workshop program.</p>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">9:00 AM - 9:40 AM</h6>
+                        <h4 class="schedule-item-title">Keynote</h4>
+                        <p class="schedule-item-desc mb-0">Talk details to be announced.</p>
+                     </div>
+                     <div class="offset-md-1 col-md-6">
+                        <h6 class="mb-3 text-body">Speaker</h6>
+                        <div class="d-flex align-items-center">
+                           <img src="./assets/images/team/manlingli.jpg" alt="Manling Li" class="avatar avatar-md rounded-circle" />
+                           <div class="ms-3">
+                              <h6 class="mb-0">Prof. Manling Li</h6>
+                              <small class="text-body-secondary">Northwestern University</small>
                            </div>
                         </div>
                      </div>
-                     <div class="col">
-                        <div class="card border-0 shadow-sm text-center h-100">
-                           <div class="card-body p-5">
-                              <h5 class="mb-4">Workshop</h5>
-                              <div class="mb-3">
-                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://agentic-visual-media.github.io/" 
-                                      alt="Workshop QR Code" 
-                                      class="img-fluid"
-                                      style="max-width: 200px;" />
-                              </div>
-                              <p class="mb-0 text-muted small">Scan to access the workshop homepage and information</p>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">9:40 AM - 10:20 AM</h6>
+                        <h4 class="schedule-item-title">Keynote</h4>
+                        <p class="schedule-item-desc mb-0">Talk details to be announced.</p>
+                     </div>
+                     <div class="offset-md-1 col-md-6">
+                        <h6 class="mb-3 text-body">Speaker</h6>
+                        <div class="d-flex align-items-center">
+                           <img src="./assets/images/team/headshot.jpg" alt="Ranjay Krishna" class="avatar avatar-md rounded-circle" />
+                           <div class="ms-3">
+                              <h6 class="mb-0">Prof. Ranjay Krishna</h6>
+                              <small class="text-body-secondary">University of Washington</small>
                            </div>
                         </div>
                      </div>
                   </div>
-                  -->
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">10:20 AM - 10:50 AM</h6>
+                        <h4 class="schedule-item-title">Coffee Break</h4>
+                        <p class="schedule-item-desc mb-0">Refreshments and networking.</p>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">10:50 AM - 11:30 AM</h6>
+                        <h4 class="schedule-item-title">Keynote</h4>
+                        <p class="schedule-item-desc mb-0">Talk details to be announced.</p>
+                     </div>
+                     <div class="offset-md-1 col-md-6">
+                        <h6 class="mb-3 text-body">Speaker</h6>
+                        <div class="d-flex align-items-center">
+                           <img src="./assets/images/team/YongfengZhang.jpg" alt="Yongfeng Zhang" class="avatar avatar-md rounded-circle" />
+                           <div class="ms-3">
+                              <h6 class="mb-0">Prof. Yongfeng Zhang</h6>
+                              <small class="text-body-secondary">Rutgers University</small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">11:30 AM - 12:10 PM</h6>
+                        <h4 class="schedule-item-title">Agent and World, in One Model</h4>
+                        <p class="schedule-item-desc mb-3">Most of the field treats agent and world model research as two programs. We don't. A world model is an agent whose policy you called dynamics. An agent is a world model you queried for actions. The cut between them is something you draw.</p>
+                        <p class="schedule-item-desc mb-2">This talk covers:</p>
+                        <ul class="schedule-item-desc mb-0 ps-3">
+                           <li>How we're improving VLMs' agentic capabilities in video AI.</li>
+                           <li>How we're improving video gen models as environments.</li>
+                           <li>What happens at the seam, and why we think this is also the right framing for safety.</li>
+                        </ul>
+                     </div>
+                     <div class="offset-md-1 col-md-6">
+                        <h6 class="mb-3 text-body">Speaker</h6>
+                        <div class="d-flex align-items-center">
+                           <img src="./assets/images/team/tom-cao.jpg" alt="Tom Cao" class="avatar avatar-md rounded-circle" />
+                           <div class="ms-3">
+                              <h6 class="mb-0">Tom Cao</h6>
+                              <small class="text-body-secondary">Co-founder &amp; CTO, Phyllo Labs</small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Afternoon -->
+                  <div class="row g-0">
+                     <div class="col-lg-12">
+                        <h4 class="schedule-period-title mb-5 pt-4">Afternoon</h4>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">12:10 PM - 1:45 PM</h6>
+                        <h4 class="schedule-item-title">Lunch</h4>
+                        <p class="schedule-item-desc mb-0">Lunch break on your own or with fellow attendees.</p>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">1:45 PM - 2:25 PM</h6>
+                        <h4 class="schedule-item-title">Keynote</h4>
+                        <p class="schedule-item-desc mb-0">Talk details to be announced.</p>
+                     </div>
+                     <div class="offset-md-1 col-md-6">
+                        <h6 class="mb-3 text-body">Speaker</h6>
+                        <div class="d-flex align-items-center">
+                           <img src="./assets/images/team/jack-parker-holder.jpg" alt="Jack Parker-Holder" class="avatar avatar-md rounded-circle" />
+                           <div class="ms-3">
+                              <h6 class="mb-0">Dr. Jack Parker-Holder</h6>
+                              <small class="text-body-secondary">Google DeepMind</small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">2:25 PM - 3:05 PM</h6>
+                        <h4 class="schedule-item-title">Keynote</h4>
+                        <p class="schedule-item-desc mb-0">Talk details to be announced.</p>
+                     </div>
+                     <div class="offset-md-1 col-md-6">
+                        <h6 class="mb-3 text-body">Speaker</h6>
+                        <div class="d-flex align-items-center">
+                           <img src="./assets/images/team/tencent_hunyuan.png" alt="Tencent Hunyuan Team" class="avatar avatar-md rounded-circle" />
+                           <div class="ms-3">
+                              <h6 class="mb-0">Tencent Hunyuan Team</h6>
+                              <small class="text-body-secondary">Tencent</small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">3:05 PM - 3:35 PM</h6>
+                        <h4 class="schedule-item-title">Coffee / Short Poster Viewing</h4>
+                        <p class="schedule-item-desc mb-0">Coffee break with a short poster viewing session.</p>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">3:35 PM - 4:25 PM</h6>
+                        <h4 class="schedule-item-title">Panel Discussion</h4>
+                        <p class="schedule-item-desc mb-0">Panel on agentic AI for visual media — panelists to be announced.</p>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top py-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">4:25 PM - 5:00 PM</h6>
+                        <h4 class="schedule-item-title">Accepted Paper Highlights / Demos / Discussion</h4>
+                        <p class="schedule-item-desc mb-0">Highlights from accepted papers, live demos, and open discussion.</p>
+                     </div>
+                  </div>
+
+                  <div class="row g-0 border-top pt-6">
+                     <div class="col-md-5">
+                        <h6 class="schedule-item-time mb-5">5:00 PM - 5:10 PM</h6>
+                        <h4 class="schedule-item-title">Closing</h4>
+                        <p class="schedule-item-desc mb-0">Closing remarks and thank you.</p>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
       </section>
-      <!--Call for Paper end-->
+      <!--Event schedule end-->
 
       <!--Organizers start-->
       <section id="organizers" class="py-xl-9 py-5 bg-gray-200" id="speaker">
@@ -709,29 +896,45 @@
             </div>
             <div class="row">
                <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
-                  <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 justify-content-center g-5">
+                  <div class="row row-cols-lg-5 row-cols-md-2 row-cols-1 justify-content-center g-5">
                      <div class="col">
                         <figure class="text-center mb-0">
-                           <img src="./assets/images/brand-logo/tencent.jpg" alt="Tencent logo" class="img-fluid"
-                              style="max-width: 200px; height: 100px; object-fit: contain;" />
+                           <a href="https://www.tencent.com/en-us/" target="_blank" rel="noopener noreferrer">
+                              <img src="./assets/images/brand-logo/tencent.jpg" alt="Tencent logo" class="img-fluid"
+                                 style="max-width: 200px; height: 100px; object-fit: contain;" />
+                           </a>
                         </figure>
                      </div>
                      <div class="col">
                         <figure class="text-center mb-0">
-                           <img src="./assets/images/brand-logo/Adobe-Logo-2020-present.png" alt="logo" class="img-fluid"
-                              style="max-width: 200px; height: 100px;" />
+                           <a href="https://www.adobe.com/" target="_blank" rel="noopener noreferrer">
+                              <img src="./assets/images/brand-logo/Adobe-Logo-2020-present.png" alt="Adobe logo" class="img-fluid"
+                                 style="max-width: 200px; height: 100px; object-fit: contain;" />
+                           </a>
                         </figure>
                      </div>
                      <div class="col">
                         <figure class="text-center mb-0">
-                           <img src="./assets/images/brand-logo/Snap_Inc.png" alt="logo" class="img-fluid"
-                              style="max-width: 200px; height: auto;" />
+                           <a href="https://philolabs.ai/" target="_blank" rel="noopener noreferrer">
+                              <img src="./assets/images/brand-logo/philo_vertical_coral.png" alt="Philo logo" class="img-fluid"
+                                 style="max-width: 200px; height: 100px; object-fit: contain;" />
+                           </a>
                         </figure>
                      </div>
                      <div class="col">
                         <figure class="text-center mb-0">
-                           <img src="./assets/images/brand-logo/insait-trans.png" alt="logo" class="img-fluid"
-                              style="max-width: 200px; height: auto;" />
+                           <a href="https://www.snap.com/" target="_blank" rel="noopener noreferrer">
+                              <img src="./assets/images/brand-logo/Snap_Inc.png" alt="Snap logo" class="img-fluid"
+                                 style="max-width: 200px; height: 100px; object-fit: contain;" />
+                           </a>
+                        </figure>
+                     </div>
+                     <div class="col">
+                        <figure class="text-center mb-0">
+                           <a href="https://insait.ai/" target="_blank" rel="noopener noreferrer">
+                              <img src="./assets/images/brand-logo/insait-trans.png" alt="INSAIT logo" class="img-fluid"
+                                 style="max-width: 200px; height: 100px; object-fit: contain;" />
+                           </a>
                         </figure>
                      </div>
                   </div>
